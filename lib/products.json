@@ -284,5 +284,18 @@
     "note": "",
     "priceSource": "Referência do anúncio consultado",
     "voltage": null
+  },
+  {
+    "id": "gift-23",
+    "name": "Espremedor elétrico recarregável USB · branco",
+    "price": 59.96,
+    "priceMax": null,
+    "category": "Cozinha",
+    "url": "https://s.shopee.com.br/AAI5zCMHIK",
+    "store": "Shopee",
+    "image": "/assets/products/23.webp",
+    "note": "Cor branca. Recarregável por USB: use carregador compatível com rede 220 V e com as especificações do produto.",
+    "priceSource": "Print do anúncio enviado pelo casal",
+    "voltage": null
   }
 ]

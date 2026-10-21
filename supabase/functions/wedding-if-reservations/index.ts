@@ -6,7 +6,7 @@ const cors = {
 };
 const json = (body: unknown, status = 200) => Response.json(body, { status, headers: { ...cors, 'Cache-Control': 'no-store' } });
 const validToken = (token: unknown): token is string => typeof token === 'string' && /^[a-f0-9]{64}$/.test(token);
-const validProduct = (id: unknown): id is string => typeof id === 'string' && /^gift-(0[1-9]|1[0-9]|2[0-2])$/.test(id);
+const validProduct = (id: unknown): id is string => typeof id === 'string' && /^gift-(0[1-9]|1[0-9]|2[0-3])$/.test(id);
 async function hash(token: string) {
  const bytes = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(token));
  return [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2, '0')).join('');
