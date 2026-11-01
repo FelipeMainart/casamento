@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Felipe e Ingrid//Casamento//PT-BR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:ingrid-felipe-20270130@casamento
+DTSTAMP:20261019T000000Z
+DTSTART;VALUE=DATE:20270130
+DTEND;VALUE=DATE:20270131
+SUMMARY:Casamento de Felipe & Ingrid
+DESCRIPTION:Guardar esta data com carinho. Horário e local serão informados pelo casal.
+END:VEVENT
+END:VCALENDAR
