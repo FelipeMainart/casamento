@@ -17,6 +17,12 @@ export interface RsvpRecord {
   created_at: string;
 }
 
+export interface GiftReservationRecord {
+  product_id: string;
+  guest_name: string;
+  created_at: string;
+}
+
 export function rsvpRequest(init: RequestInit = {}) {
   const headers = new Headers(init.headers);
   headers.set('apikey', config.anonKey);

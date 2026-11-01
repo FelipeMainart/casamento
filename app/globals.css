@@ -262,3 +262,29 @@ html,body{overflow-x:hidden}
   .add-companion-btn{width:100%;min-height:44px;text-align:center}
   .companion-row{grid-template-columns:1fr 106px 40px}
 }
+
+
+/* Abas do Painel dos Noivos (/presenca e /presentes-reservados) */
+.couple-panel-tabs{display:inline-flex;flex-wrap:wrap;gap:8px;background:#e6f0f7;padding:6px;border-radius:10px;border:1px solid #cbddea;margin-bottom:28px}
+.panel-tab{padding:10px 18px;border-radius:7px;font-size:12.5px;font-weight:600;color:#486580;transition:all .2s}
+.panel-tab:hover{color:var(--navy);background:rgba(255,255,255,.55)}
+.panel-tab.active{background:var(--navy);color:#fff;box-shadow:0 3px 10px rgba(21,43,72,.14)}
+
+.stat-value.stat-value-money{font-size:32px;line-height:1.25}
+
+.gift-admin-header{display:flex;align-items:flex-start;gap:14px}
+.gift-admin-thumb{width:72px;height:72px;border-radius:8px;border:1px solid #dce7ef;object-fit:contain;background:#fff;padding:6px;flex-shrink:0}
+.gift-admin-thumb.placeholder{display:flex;align-items:center;justify-content:center;font-size:26px;background:#f4f8fc}
+.gift-admin-title-wrap{display:flex;flex-direction:column;align-items:flex-start;min-width:0}
+.gift-admin-category{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#6886a0;margin-bottom:4px}
+.guest-status-badge.available-badge{background:#eef4f9;color:#4f6d87;border:1px solid #cfe0ed}
+.gift-giver-box{background:#eff6fc;border-color:#c4daec}
+.gift-giver-name{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:3px}
+.gift-giver-date{font-size:11px;color:var(--ink)}
+.gift-free-box{color:#6f8498;font-size:12px;font-style:italic}
+
+@media(max-width:700px){
+  .couple-panel-tabs{display:flex;width:100%}
+  .panel-tab{flex:1;text-align:center;padding:10px 10px;font-size:11.5px}
+  .stat-value.stat-value-money{font-size:25px}
+}

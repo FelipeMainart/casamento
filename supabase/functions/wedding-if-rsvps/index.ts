@@ -16,6 +16,7 @@ export interface Companion {
 }
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const PRODUCT_RE = /^gift-(0[1-9]|1[0-9]|2[0-3])$/;
 
 let schemaReady = false;
 
@@ -59,31 +60,51 @@ if (typeof Deno !== 'undefined') {
       await ensureSchema(sql);
 
       if (request.method === 'GET') {
-        const rows = await sql`
-          select
-            id,
-            guest_name,
-            phone,
-            attending,
-            companions,
-            adults_count,
-            children_count,
-            message,
-            created_at
-          from public.wedding_if_rsvps
-          order by created_at desc
-        `;
-        return json({ rsvps: rows });
+        const [rsvps, giftReservations] = await Promise.all([
+          sql`
+            select
+              id,
+              guest_name,
+              phone,
+              attending,
+              companions,
+              adults_count,
+              children_count,
+              message,
+              created_at
+            from public.wedding_if_rsvps
+            order by created_at desc
+          `,
+          sql`
+            select
+              product_id,
+              guest_name,
+              created_at
+            from public.wedding_if_reservations
+            order by created_at desc
+          `,
+        ]);
+        return json({ rsvps, giftReservations });
       }
 
       if (request.method === 'DELETE') {
         const raw = await request.text();
-        let body: { id?: unknown };
+        let body: { id?: unknown; productId?: unknown };
         try {
           body = JSON.parse(raw);
         } catch {
           return json({ error: 'Dados inválidos.' }, 400);
         }
+
+        if (typeof body?.productId === 'string') {
+          const productId = body.productId.trim();
+          if (!PRODUCT_RE.test(productId)) {
+            return json({ error: 'ID de presente inválido.' }, 400);
+          }
+          await sql`delete from public.wedding_if_reservations where product_id = ${productId}`;
+          return json({ ok: true });
+        }
+
         const id = typeof body?.id === 'string' ? body.id.trim() : '';
         if (!UUID_RE.test(id)) {
           return json({ error: 'Identificador inválido.' }, 400);

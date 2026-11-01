@@ -253,6 +253,16 @@ export default function PresencaPage() {
       </header>
 
       <main className="guestlist-main">
+        {/* Abas de alternância entre Lista de Presença e Presentes Reservados */}
+        <nav className="couple-panel-tabs" aria-label="Painéis do casal">
+          <a href="/presenca" className="panel-tab active" aria-current="page">
+            ✓ Lista de Presença (Confirmados)
+          </a>
+          <a href="/presentes-reservados" className="panel-tab">
+            🎁 Presentes (Quem vai dar o quê)
+          </a>
+        </nav>
+
         <div className="guestlist-intro">
           <div>
             <p className="eyebrow">
