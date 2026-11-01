@@ -147,30 +147,32 @@ export default function InvitationRsvp() {
               </p>
 
               {submitted.attending && (
-                <div className="rsvp-summary-box">
-                  <span className="summary-label">RESUMO DA SUA CONFIRMAÇÃO</span>
-                  <ul>
-                    <li>
-                      <strong>{submitted.guestName}</strong> <span>(Titular)</span>
-                    </li>
-                    {submitted.companions.map((c, idx) => (
-                      <li key={idx}>
-                        <strong>{c.name}</strong>{' '}
-                        <span>({c.type === 'child' ? 'Criança' : 'Adulto'})</span>
+                <>
+                  <div className="rsvp-summary-box">
+                    <span className="summary-label">RESUMO DA SUA CONFIRMAÇÃO</span>
+                    <ul>
+                      <li>
+                        <strong>{submitted.guestName}</strong> <span>(Titular)</span>
                       </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+                      {submitted.companions.map((c, idx) => (
+                        <li key={idx}>
+                          <strong>{c.name}</strong>{' '}
+                          <span>({c.type === 'child' ? 'Criança' : 'Adulto'})</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-              <div className="rsvp-gift-invitation">
-                <p>
-                  Ter você conosco já é o nosso maior presente. Caso também deseje nos presentear com uma lembrança para o nosso novo lar, preparamos algumas sugestões com carinho:
-                </p>
-                <a className="button primary" href="/presentes">
-                  Conhecer lista de presentes (opcional) <span aria-hidden="true">♡ ↗</span>
-                </a>
-              </div>
+                  <div className="rsvp-gift-invitation">
+                    <p>
+                      Ter você conosco já é o nosso maior presente. Caso também deseje nos presentear neste momento especial, preparamos algumas sugestões com carinho:
+                    </p>
+                    <a className="button primary" href="/presentes">
+                      Conhecer lista de presentes (opcional) <span aria-hidden="true">♡ ↗</span>
+                    </a>
+                  </div>
+                </>
+              )}
 
               <div className="rsvp-success-actions">
                 <button type="button" className="text-button" onClick={resetForm}>

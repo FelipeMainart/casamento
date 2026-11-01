@@ -6,9 +6,9 @@ import MobileNav from '../mobile-nav';
 import { giftsPageAfterCatalogue } from '../page-markup';
 
 export const metadata: Metadata = {
-  title: 'Lista de Presentes | Felipe & Ingrid (30.01.2027)',
+  title: 'Sugestões de Presentes | Casamento Felipe & Ingrid (30.01.2027)',
   description:
-    'Se desejar nos presentear, preparamos algumas sugestões com carinho para o nosso novo lar.',
+    'Se desejar nos presentear em nosso casamento, preparamos algumas sugestões com carinho para essa nova etapa.',
 };
 
 export default function PresentesPage() {
