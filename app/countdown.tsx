@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 
-const WEDDING_TIMESTAMP = new Date('2027-01-30T00:00:00-03:00').getTime();
+const WEDDING_TIMESTAMP = new Date('2027-01-16T00:00:00-03:00').getTime();
 
 const GOOGLE_CALENDAR_URL =
-  'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamento+de+Felipe+%26+Ingrid&dates=20270130/20270131&details=Guardar+esta+data+com+carinho.+Hor%C3%A1rio+e+local+ser%C3%A3o+informados+pelo+casal.';
+  'https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamento+de+Felipe+%26+Ingrid&dates=20270116/20270117&details=Guardar+esta+data+com+carinho.+Hor%C3%A1rio+e+local+ser%C3%A3o+informados+pelo+casal.';
 
 function computeRemaining() {
   const remaining = Math.max(0, WEDDING_TIMESTAMP - Date.now());
@@ -49,13 +49,13 @@ export default function Countdown() {
     }
 
     if (isIOS) {
-      window.location.href = '/Felipe-e-Ingrid-30-01-2027.ics';
+      window.location.href = '/Felipe-e-Ingrid-16-01-2027.ics';
       return;
     }
 
     const link = document.createElement('a');
-    link.href = '/Felipe-e-Ingrid-30-01-2027.ics';
-    link.download = 'Felipe-e-Ingrid-30-01-2027.ics';
+    link.href = '/Felipe-e-Ingrid-16-01-2027.ics';
+    link.download = 'Felipe-e-Ingrid-16-01-2027.ics';
     document.body.appendChild(link);
     link.click();
     link.remove();
@@ -76,7 +76,7 @@ export default function Countdown() {
         <div
           className="countdown"
           role="timer"
-          aria-label="Contagem regressiva para 30 de janeiro de 2027"
+          aria-label="Contagem regressiva para 16 de janeiro de 2027"
         >
           <div>
             <strong id="days" suppressHydrationWarning>

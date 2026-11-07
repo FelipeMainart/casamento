@@ -6,7 +6,7 @@ import MobileNav from '../mobile-nav';
 import { giftsPageAfterCatalogue } from '../page-markup';
 
 export const metadata: Metadata = {
-  title: 'Sugestões de Presentes | Casamento Felipe & Ingrid (30.01.2027)',
+  title: 'Sugestões de Presentes | Casamento Felipe & Ingrid (16.01.2027)',
   description:
     'Se desejar nos presentear em nosso casamento, preparamos algumas sugestões com carinho para essa nova etapa.',
 };
@@ -22,7 +22,7 @@ export default function PresentesPage() {
         <a className="brand" href="/" aria-label="Felipe e Ingrid, voltar ao convite">
           F<span>&</span>I
         </a>
-        <span className="header-date">30 . 01 . 2027</span>
+        <span className="header-date">16 . 01 . 2027</span>
         <a className="subpage-back-link" href="/">
           ← Voltar ao convite
         </a>

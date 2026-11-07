@@ -121,7 +121,7 @@ export default function PresencaPage() {
 
     const lines: string[] = [
       '==================================================',
-      '   LISTA DE PRESENÇA — FELIPE & INGRID (30.01.2027)',
+      '   LISTA DE PRESENÇA — FELIPE & INGRID (16.01.2027)',
       '==================================================',
       `Total de Pessoas Confirmadas: ${stats.totalPeople} (${stats.totalAdults} adultos, ${stats.totalChildren} crianças)`,
       `Famílias / Confirmações: ${stats.confirmedGroups}`,
